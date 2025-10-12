@@ -5,18 +5,18 @@ import java.time.LocalDate;
 public class Person {
 
     private LocalDate birthday;
-    private String age;
-    
+    private int age;
+
     public LocalDate getBirthday() {
         return birthday;
     }
     public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
-    public String getAge() {
+    public int getAge() {
         return age;
     }
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 

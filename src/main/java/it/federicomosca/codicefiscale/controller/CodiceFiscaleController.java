@@ -1,5 +1,6 @@
 package it.federicomosca.codicefiscale.controller;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,7 +20,7 @@ public class CodiceFiscaleController {
     }
 
     @GetMapping("/calculate-birthday-age")
-    public Person calculateBirthdateAndAge (@RequestParam String codiceFiscale){
-        return codiceFiscaleService.getBirthdateAndAge(codiceFiscale);
+    public ResponseEntity<Person> calculateBirthdateAndAge (@RequestParam String codiceFiscale){
+        return ResponseEntity.ok(codiceFiscaleService.getBirthdateAndAge(codiceFiscale));
     }
 }

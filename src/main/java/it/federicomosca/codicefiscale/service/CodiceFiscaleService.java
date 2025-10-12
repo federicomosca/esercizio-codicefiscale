@@ -7,5 +7,5 @@ import it.federicomosca.codicefiscale.DTO.Person;
 public interface CodiceFiscaleService {
     
     Person getBirthdateAndAge(String codiceFiscale);
-    String calculateAge(LocalDate birthdate);
+    int calculateAge(LocalDate birthdate);
 }

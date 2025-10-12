@@ -46,7 +46,7 @@ public class CodiceFiscaleServiceImplementation implements CodiceFiscaleService 
 		};
 
 		LocalDate birthday = LocalDate.parse(String.format("%04d-%s-%02d", fullYear, month, day));
-		String age = calculateAge(birthday);
+		int age = calculateAge(birthday);
 
 		Person person = new Person();
 		person.setBirthday(birthday);
@@ -56,7 +56,7 @@ public class CodiceFiscaleServiceImplementation implements CodiceFiscaleService 
 	}
 
 	@Override
-	public String calculateAge(LocalDate birthday) {
-		return String.valueOf(Period.between(birthday, LocalDate.now()).getYears());
+	public int calculateAge(LocalDate birthday) {
+		return Period.between(birthday, LocalDate.now()).getYears();
 	}
 }

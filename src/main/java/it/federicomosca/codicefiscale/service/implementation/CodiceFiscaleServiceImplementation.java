@@ -15,7 +15,9 @@ public class CodiceFiscaleServiceImplementation implements CodiceFiscaleServiceD
 
 		String anno = "19" + codiceFiscale.substring(6,8);
         String codiceMese = codiceFiscale.substring(8,9);
-        String giorno = codiceFiscale.substring(9, 11);
+        int giornoSesso = Integer.parseInt(codiceFiscale.substring(9, 11));
+
+		String giorno = giornoSesso <= 31 ? "" + giornoSesso : "" + (giornoSesso - 40);
 
 		String mese = switch (codiceMese) {
 			case "A" -> "01";

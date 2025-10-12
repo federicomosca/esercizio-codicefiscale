@@ -25,7 +25,7 @@ public class CodiceFiscaleController {
     }
 
     @GetMapping("/get-eta")
-    public String getEta(@RequestParam("eta") String codiceFiscale) {
+    public String getEta(@RequestParam("codice") String codiceFiscale) {
         return codiceFiscaleService.calcolaEtà(codiceFiscale);
     }
 }

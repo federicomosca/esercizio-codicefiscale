@@ -29,23 +29,23 @@ public class CodiceFiscaleServiceImplementation implements CodiceFiscaleService 
 		int dayAndSex = Integer.parseInt(codiceFiscale.substring(9, 11));
 		int day = dayAndSex <= 31 ? dayAndSex : dayAndSex - 40;
 
-		String month = switch (monthCode) {
-			case "A" -> "01";
-			case "B" -> "02";
-			case "C" -> "03";
-			case "D" -> "04";
-			case "E" -> "05";
-			case "H" -> "06";
-			case "L" -> "07";
-			case "M" -> "08";
-			case "P" -> "09";
-			case "R" -> "10";
-			case "S" -> "11";
-			case "T" -> "12";
+		int month = switch (monthCode) {
+            case "A" -> 1;
+            case "B" -> 2;
+            case "C" -> 3;
+			case "D" -> 4;
+			case "E" -> 5;
+			case "H" -> 6;
+			case "L" -> 7;
+			case "M" -> 8;
+			case "P" -> 9;
+			case "R" -> 10;
+			case "S" -> 11;
+			case "T" -> 12;
 			default -> throw new IllegalArgumentException("Mese non valido.");
 		};
 
-		LocalDate birthday = LocalDate.parse(String.format("%04d-%s-%02d", fullYear, month, day));
+		LocalDate birthday = LocalDate.parse(String.format("%04d-%02d-%02d", fullYear, month, day));
 		int age = calculateAge(birthday);
 
 		Person person = new Person();
